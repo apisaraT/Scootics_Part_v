@@ -13,4 +13,10 @@ You will also see any lint errors in the console.
 
 ## install library 
 
-### Deck.gl `npm install `
+### Deck.gl `npm install deck.gl`
+### React-select `npm i --save react-select`
+### VictoryChart `npm install victory`
+### Firebase `npm install firebase`
+### axios `npm install axios`
+### momoent `npm install moment --save`
+### React router dom `npm install --save react-router-dom`
