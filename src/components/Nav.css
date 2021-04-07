@@ -1,0 +1,87 @@
+.Navbar {
+    background: #262A3B;
+    height: 9%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.logo{
+    color:#fff;
+    font-Family:'Mitr';
+}
+
+.buttons {
+    font-family: 'Mitr';
+    border-style: none;
+    background: transparent;
+    color:white;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+.buttons:hover{
+    background: #DCDCDC;
+    color:#FFF;
+    padding:15px;
+}
+
+.signout{
+    font-family: 'Mitr';
+    border-style: none;
+    background: transparent;
+    color:#FF4040;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+.signout:hover{
+    background:#FF4040;
+    color:#fff;
+    padding:15px;
+}
+.dropbtn {
+    background:transparent;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'mitr';
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background:#DCDCDC;
+    border-radius: 12px;
+  }

@@ -1,0 +1,86 @@
+.containers{
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+    margin-top: 4%;
+    column-count: 2;
+    align-items: center;
+ 
+}
+.containers2{
+    display: flex;
+    justify-content: space-between;
+    margin-top:10%;
+    column-count: 2;
+    align-items: center;
+ 
+}
+.containers3{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    align-items: center;
+    margin-bottom: 10%;
+ 
+}
+.images{
+    width: 40%;
+    height: 40%;
+    margin: 0;
+    padding-left: 5%;
+    align-items: flex-start;
+}
+.message{
+    font-family: 'Mitr';
+    text-align: left;
+    margin-right: 5%;
+    color: #444444;
+}
+.headers{
+    font-size: 45px;
+    font-weight: 500;
+}
+.text{
+    font-size: 25px;
+}
+.images2{
+    width: 40%;
+    height: 40%;
+    margin: 0;
+    padding-right: 5%;
+    align-items: flex-start;
+}
+.message2{
+    font-family: 'Mitr';
+    text-align: left;
+    margin-left: 5%;
+    color: #444444;
+}
+.message3{
+    font-family: 'Mitr';
+    text-align: left;
+    margin-right: 10%;
+    color: #444444;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8%;
+    background: #262A3B;
+    height:8vmin;
+    color:#fff;
+    align-items: center;
+}
+.headfooter{
+    font-size: 40px;
+    padding-left: 5%;
+    font-weight: 400;
+    font-family: "Mitr";
+}
+.youtube{
+    padding-right: 10%;
+    font-size: 30px;
+    background: transparent;
+    border:0;
+    color: #fff;
+}

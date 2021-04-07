@@ -1,60 +1,35 @@
 import React from 'react';
-import auth from '../firebase';
 import { Link } from 'react-router-dom';
+import './Nav.css'
+import firebaseConfig from '../firebase/config';
 
-const NavBar = ({ setSession }) => {
-  const handleLogout = () => {
-    auth.signOut().then(response => {
-      setSession({
-        isLoggedIn: false,
-        currentUser: null
-      });
-    });
-  };
-  const styles = {
-    backgroundColor: '#fff',
-    width: '18%',
-    borderRadius: 10,
-    height: '90%',
-    margin: '2.5rem',
-  }
-  const buttonStyles = {
-    marginRight: '1rem',
-    fontSize: '1.5rem',
-    fontWeight: 400,
-    border: 0,
-  }
-  const headerStyles={
-    fontFamily:'Righteous'
-  }
-  
+const NavBar = () => {
   return (
-    <div style={styles} class="d-flex flex-column justify-content-around" >
-      <div style={headerStyles} class="d-inline-flex justify-content-center">
+    <div className="Navbar">
+      <div className="logo">
         <h1>Scootics</h1>
       </div>
-      <div>
+      <div >
         <Link to="/">
-          <button style={buttonStyles} type="button" class="btn btn-lg btn-outline-secondary">HOME</button>
+          <button className="buttons" type="button" >HOME</button>
         </Link>
       </div>
-      <div>
+      <div >
         <Link to="/pickup-dropoff">
-          <button style={buttonStyles} type="button" class="btn btn-outline-secondary">PICKUP-DROPOFF</button>
+          <button className="buttons" type="button" >Hourly Graph </button>
         </Link>
       </div>
-      <div>
-        <Link to="/prediction">
-          <button style={buttonStyles} type="button" class="btn btn-outline-secondary">PREDICTIONS</button>
-        </Link>
+      <div >
+        <div class="dropdown">
+          <button class="dropbtn">Predictive Models</button>
+          <div class="dropdown-content">
+            <a href="/DesPre">Destination Prediction</a>
+          </div>
+        </div>
       </div>
       <div>
-        <button style={buttonStyles} type="button" onClick={handleLogout} class="btn btn-outline-danger">SIGN OUT</button>
+        <button className="signout" type="button" onClick={() => firebaseConfig.auth().signOut()}>SIGN OUT</button>
       </div>
-
-
-
-
     </div>
   )
 

@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './App.css';
 import DeckGL from '@deck.gl/react';
 import { StaticMap } from 'react-map-gl';
 import { TripsLayer } from '@deck.gl/geo-layers';
 import ScooterData from './data/ScooterData2.json';
-import Moment from 'moment';
+import {Redirect} from 'react-router-dom'
 
-import SignIn from './components/SignIn';
-import auth from './firebase';
 import NavBar from './components/Nav';
-
+import GetStarted from './components/getStarted'
+import Home from './components/home';
+import { AuthContext } from './components/Auth';
 
 const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoiYmlnYmFuazcyMSIsImEiOiJja2dhcXgxMXkwOXR3MnNwZHAyNmR2aDQ0In0.ZEyhAomCp9DWVE-9yiVDiw';
 const INITIAL_VIEW_STATE = {
   longitude: -114.15,
   latitude: 51,
-  zoom: 10.8,
+  zoom: 11.5,
   pitch: 50,
   bearing: 0
 };
@@ -27,26 +27,8 @@ function App({
   loopLength = 1500
 }) {
   /////////////////////////////// Authentication/////////////////////////////////////////////////////////////////////
-  const [session, setSession] = useState({
-    isLoggedIn: false,
-    currentUser: null,
-    errorMessage: null
-  });
+  const { currentUser } = useContext(AuthContext);
 
-  useEffect(() => {
-    const handelAuth = auth.onAuthStateChanged(user => {
-      if (user) {
-        setSession({
-          isLoggedIn: true,
-          currentUser: user,
-          errorMessage: null
-        })
-      }
-    });
-    return () => {
-      handelAuth();
-    }
-  }, [])
   //////////////////////////////////////////////////////////////////////////////////////////////
   const [time, setTime] = useState(0);
   const [animation] = useState({});
@@ -95,8 +77,8 @@ function App({
   return (
     <div className="App" >
       {
-        session.isLoggedIn ? (
-          <DeckGL
+        currentUser ? (
+           <DeckGL
             initialViewState={INITIAL_VIEW_STATE}
             controller={true}
             layers={layer}
@@ -105,13 +87,15 @@ function App({
               mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
               mapStyle={mapStyle}
             />
-            <NavBar setSession={setSession} />
-          </DeckGL>)
-
-          : (<SignIn setSession={setSession} />)
+            <NavBar />
+            <GetStarted />
+            <Home />
+          </DeckGL>
+        ) : (
+          <Redirect to="/SignIn"/>
+        )
       }
-
-
+         
     </div>
   );
 }

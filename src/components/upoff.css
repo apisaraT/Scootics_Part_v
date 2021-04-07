@@ -1,0 +1,48 @@
+.Selected{
+    margin-top: 10%;
+    margin-left: 2%;
+}
+.btn{
+    color:white;
+    margin: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'mitr';
+    border-radius: 12px;
+    width: 8%;
+}
+.on{
+    background-color: #fff;
+    color: #7BBC66;
+}
+.on:hover{
+    color:white;
+    background-color:#60964E ;
+}
+.off{
+    color:#FFDE26;
+    background-color: #fff;
+}
+.off:hover{
+    color:white;
+    background-color: #E1C008;
+}
+.submit{
+    background-color: #1277FF;
+}
+.submit:hover{
+    color:white;
+    background-color: #1976D2;
+}
+.reset{
+    background-color:  #E74C3C;
+}
+.reset:hover{
+    color:white;
+    background-color: #CB4335;
+}
+.Selectform{
+    width: 30%;
+    padding: 10px;
+    font-size: 20px;
+}

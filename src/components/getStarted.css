@@ -1,0 +1,27 @@
+.texts {
+    justify-content: center;
+    color: #fff;
+    font-size: 25px;
+    height:100%;
+    padding-top:15%;
+    padding-right: 65%;
+}
+.getbuttons {
+    border-radius: 12px;
+    border-style: none;
+    font-size:25px;
+    font-family: 'Mitr';
+    background: #4046FF;
+    color:#fff;
+    padding:15px;
+    margin-top: 2%;
+}
+.getbuttons:hover{
+        background: #2B2FC6;
+        color:#fff;
+        padding:15px;
+}
+.headers{
+    font-size:50px;
+    font-weight:bold;
+}
